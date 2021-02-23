@@ -4,31 +4,45 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 5
-    public static void main(String[] args){
-        printPrimeNumbersSmallerThan(10);
-    }
+//    //task 6
+//    public static void main(String[] args){
+//        calculateHn(10);
+//    }
+//
+//    public static void calculateHn(int n){
+//        //1 + 1/2 + 1/3 + .... + 1/n
+//        double sum = 0;
+//        for(int i = 1; i <= n; i++){
+//            sum += 1.0 / i;
+//        }
+//        System.out.println(sum);
+//    }
 
-    public static void printPrimeNumbersSmallerThan(int max){
-        for(int i = 2; i < max; i++){
-            if(isPrime(i)){
-                System.out.println(i);
-            }
-        }
-    }
-
-    public static boolean isPrime(int x){
-        if(x <= 1){
-            System.out.println("Va rog introduceti un numar pozitiv");
-            return false;
-        }
-        for(int i = 2; i < x; i++){
-            if(x % i == 0){
-                return false;
-            }
-        }
-        return true;
-    }
+//    //task 5
+//    public static void main(String[] args){
+//        printPrimeNumbersSmallerThan(10);
+//    }
+//
+//    public static void printPrimeNumbersSmallerThan(int max){
+//        for(int i = 2; i < max; i++){
+//            if(isPrime(i)){
+//                System.out.println(i);
+//            }
+//        }
+//    }
+//
+//    public static boolean isPrime(int x){
+//        if(x <= 1){
+//            System.out.println("Va rog introduceti un numar pozitiv");
+//            return false;
+//        }
+//        for(int i = 2; i < x; i++){
+//            if(x % i == 0){
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
 
 //    //task 4
