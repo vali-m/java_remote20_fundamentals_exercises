@@ -3,28 +3,32 @@ package com.sda.exercises;
 import java.util.Scanner;
 
 public class Main {
-    //task 4
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("max=");
-            int max = scanner.nextInt();
-            fizzBuzz(max);
-        }
 
-        public static void fizzBuzz(int max){
-            for(int i = 1; i <= max; i++){
-                if(i % 3 == 0 && i % 7 == 0){
-                    System.out.println("Fizz buzz");
-                } else if(i % 3 == 0){
-                    System.out.println("Fizz");
-                } else if(i % 7 == 0){
-                    System.out.println("Buzz");
-                } else {
-                    System.out.println(i);
-                }
+    //task 5
 
-            }
-        }
+
+//    //task 4
+//        public static void main(String[] args) {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.print("max=");
+//            int max = scanner.nextInt();
+//            fizzBuzz(max);
+//        }
+//
+//        public static void fizzBuzz(int max){
+//            for(int i = 1; i <= max; i++){
+//                if(i % 3 == 0 && i % 7 == 0){
+//                    System.out.println("Fizz buzz");
+//                } else if(i % 3 == 0){
+//                    System.out.println("Fizz");
+//                } else if(i % 7 == 0){
+//                    System.out.println("Buzz");
+//                } else {
+//                    System.out.println(i);
+//                }
+//
+//            }
+//        }
 
 //      //task 3
 //    public static void main(String[] args) {
