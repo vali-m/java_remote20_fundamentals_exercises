@@ -5,6 +5,30 @@ import java.util.Scanner;
 public class Main {
 
     //task 5
+    public static void main(String[] args){
+        printPrimeNumbersSmallerThan(10);
+    }
+
+    public static void printPrimeNumbersSmallerThan(int max){
+        for(int i = 2; i < max; i++){
+            if(isPrime(i)){
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static boolean isPrime(int x){
+        if(x <= 1){
+            System.out.println("Va rog introduceti un numar pozitiv");
+            return false;
+        }
+        for(int i = 2; i < x; i++){
+            if(x % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 //    //task 4
