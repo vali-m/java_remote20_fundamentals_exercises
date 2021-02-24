@@ -4,6 +4,23 @@ import java.util.Scanner;
 
 public class Main {
 
+    //task 7
+    public static void main(String[] args){
+        fibonacci(5); // = 8
+    }
+
+    //poz:0 1 2 3 4 5
+    //val:1 1 2 3 5 8
+    public static void fibonacci(int n){
+        int[] fibonacciNumbers = new int[n + 1];
+        fibonacciNumbers[0] = 1;
+        fibonacciNumbers[1] = 1;
+        for(int i = 2; i <= n; i++){
+            fibonacciNumbers[i] = fibonacciNumbers[i-1] + fibonacciNumbers[i-2];
+        }
+        System.out.println(fibonacciNumbers[n]);
+    }
+
 //    //task 6
 //    public static void main(String[] args){
 //        calculateHn(10);
