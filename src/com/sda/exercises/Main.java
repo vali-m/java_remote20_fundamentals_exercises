@@ -4,22 +4,62 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 7
+    //task 8
     public static void main(String[] args){
-        fibonacci(5); // = 8
+        Scanner input = new Scanner(System.in);
+        System.out.print("Primul numar: ");
+        float number1 = input.nextFloat();
+        System.out.print("Operatiune matematica: ");
+        String operation = input.next();
+        System.out.print("Al doilea numar: ");
+        float number2 = input.nextFloat();
+
+        float result;
+        switch(operation){
+            case "+":
+                result = number1 + number2;
+                System.out.println("Rezultatul este: " + result);
+                break;
+            case "-":
+                result = number1 - number2;
+                System.out.println("Rezultatul este: " + result);
+                break;
+            case "*":
+                result = number1 * number2;
+                System.out.println("Rezultatul este: " + result);
+                break;
+            case "/":
+                if(number2 == 0){
+                    System.out.println("Cannot calculate!");
+                    break;
+                }
+                result = number1 / number2;
+                System.out.println("Rezultatul este: " + result);
+                break;
+            default:
+                System.out.println("Invalid Symbol: " + operation);
+        }
+
     }
 
-    //poz:0 1 2 3 4 5
-    //val:1 1 2 3 5 8
-    public static void fibonacci(int n){
-        int[] fibonacciNumbers = new int[n + 1];
-        fibonacciNumbers[0] = 1;
-        fibonacciNumbers[1] = 1;
-        for(int i = 2; i <= n; i++){
-            fibonacciNumbers[i] = fibonacciNumbers[i-1] + fibonacciNumbers[i-2];
-        }
-        System.out.println(fibonacciNumbers[n]);
-    }
+
+
+    //task 7
+//    public static void main(String[] args){
+//        fibonacci(5); // = 8
+//    }
+//
+//    //poz:0 1 2 3 4 5
+//    //val:1 1 2 3 5 8
+//    public static void fibonacci(int n){
+//        int[] fibonacciNumbers = new int[n + 1];
+//        fibonacciNumbers[0] = 1;
+//        fibonacciNumbers[1] = 1;
+//        for(int i = 2; i <= n; i++){
+//            fibonacciNumbers[i] = fibonacciNumbers[i-1] + fibonacciNumbers[i-2];
+//        }
+//        System.out.println(fibonacciNumbers[n]);
+//    }
 
 //    //task 6
 //    public static void main(String[] args){
