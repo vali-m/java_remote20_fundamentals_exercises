@@ -4,31 +4,46 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 9
+    //task 10
     public static void main(String[] args){
-        printWave(26);
+        calculateSumOfDigits(12345);
     }
 
-    public static void printWave(int length){
-        String[] rowPatterns = {
-                "*      **     *",
-                " *    *  *   * ",
-                "  *  *    * *  ",
-                "   **      *   "
-        };
-        int patternRepetitions = length / 15 + 1;
-        for(String rowPattern : rowPatterns){
-            String rowResult = "";
-            for(int i = 0; i < patternRepetitions; i++){
-                rowResult += rowPattern;
-            }
-            System.out.println(shorten(rowResult, length));
+    public static void calculateSumOfDigits(int number){
+        int sum = 0;
+        while(number > 0){
+            sum += number % 10;
+            number /= 10;
         }
+        System.out.println("Sum of all digits: " + sum);
     }
 
-    public static String shorten(String s, int length){
-        return s.substring(0, Math.min(s.length(), length));
-    }
+
+//    //task 9
+//    public static void main(String[] args){
+//        printWave(26);
+//    }
+//
+//    public static void printWave(int length){
+//        String[] rowPatterns = {
+//                "*      **     *",
+//                " *    *  *   * ",
+//                "  *  *    * *  ",
+//                "   **      *   "
+//        };
+//        int patternRepetitions = length / 15 + 1;
+//        for(String rowPattern : rowPatterns){
+//            String rowResult = "";
+//            for(int i = 0; i < patternRepetitions; i++){
+//                rowResult += rowPattern;
+//            }
+//            System.out.println(shorten(rowResult, length));
+//        }
+//    }
+//
+//    public static String shorten(String s, int length){
+//        return s.substring(0, Math.min(s.length(), length));
+//    }
 
     //task 8
 //    public static void main(String[] args){
