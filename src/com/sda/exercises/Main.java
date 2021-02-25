@@ -4,19 +4,42 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 10
+    //task 11
     public static void main(String[] args){
-        calculateSumOfDigits(12345);
+        readTexts();
     }
 
-    public static void calculateSumOfDigits(int number){
-        int sum = 0;
-        while(number > 0){
-            sum += number % 10;
-            number /= 10;
+    public static void readTexts() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduceti un text!");
+        String line;
+        String longestString = "";
+        do {
+            line = scanner.nextLine();
+            if (line.length() > longestString.length() && !line.equals("Enough!")) {
+                longestString = line;
+            }
+        } while (!line.equals("Enough!"));
+        if (!longestString.equals("")) {
+            System.out.println("Cel mai lung String este " + longestString);
+        } else {
+            System.out.println("No text provided!");
         }
-        System.out.println("Sum of all digits: " + sum);
     }
+
+//    //task 10
+//    public static void main(String[] args){
+//        calculateSumOfDigits(12345);
+//    }
+//
+//    public static void calculateSumOfDigits(int number){
+//        int sum = 0;
+//        while(number > 0){
+//            sum += number % 10;
+//            number /= 10;
+//        }
+//        System.out.println("Sum of all digits: " + sum);
+//    }
 
 
 //    //task 9
