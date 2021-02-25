@@ -4,43 +4,69 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 8
+    //task 9
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Primul numar: ");
-        float number1 = input.nextFloat();
-        System.out.print("Operatiune matematica: ");
-        String operation = input.next();
-        System.out.print("Al doilea numar: ");
-        float number2 = input.nextFloat();
-
-        float result;
-        switch(operation){
-            case "+":
-                result = number1 + number2;
-                System.out.println("Rezultatul este: " + result);
-                break;
-            case "-":
-                result = number1 - number2;
-                System.out.println("Rezultatul este: " + result);
-                break;
-            case "*":
-                result = number1 * number2;
-                System.out.println("Rezultatul este: " + result);
-                break;
-            case "/":
-                if(number2 == 0){
-                    System.out.println("Cannot calculate!");
-                    break;
-                }
-                result = number1 / number2;
-                System.out.println("Rezultatul este: " + result);
-                break;
-            default:
-                System.out.println("Invalid Symbol: " + operation);
-        }
-
+        printWave(26);
     }
+
+    public static void printWave(int length){
+        String[] rowPatterns = {
+                "*      **     *",
+                " *    *  *   * ",
+                "  *  *    * *  ",
+                "   **      *   "
+        };
+        int patternRepetitions = length / 15 + 1;
+        for(String rowPattern : rowPatterns){
+            String rowResult = "";
+            for(int i = 0; i < patternRepetitions; i++){
+                rowResult += rowPattern;
+            }
+            System.out.println(shorten(rowResult, length));
+        }
+    }
+
+    public static String shorten(String s, int length){
+        return s.substring(0, Math.min(s.length(), length));
+    }
+
+    //task 8
+//    public static void main(String[] args){
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Primul numar: ");
+//        float number1 = input.nextFloat();
+//        System.out.print("Operatiune matematica: ");
+//        String operation = input.next();
+//        System.out.print("Al doilea numar: ");
+//        float number2 = input.nextFloat();
+//
+//        float result;
+//        switch(operation){
+//            case "+":
+//                result = number1 + number2;
+//                System.out.println("Rezultatul este: " + result);
+//                break;
+//            case "-":
+//                result = number1 - number2;
+//                System.out.println("Rezultatul este: " + result);
+//                break;
+//            case "*":
+//                result = number1 * number2;
+//                System.out.println("Rezultatul este: " + result);
+//                break;
+//            case "/":
+//                if(number2 == 0){
+//                    System.out.println("Cannot calculate!");
+//                    break;
+//                }
+//                result = number1 / number2;
+//                System.out.println("Rezultatul este: " + result);
+//                break;
+//            default:
+//                System.out.println("Invalid Symbol: " + operation);
+//        }
+//
+//    }
 
 
 
