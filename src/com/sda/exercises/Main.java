@@ -4,28 +4,45 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 11
+    //task 12
     public static void main(String[] args){
-        readTexts();
+        calculateSpacePercentage("a a a ");//--> 50%
+        calculateSpacePercentage("aaa");//--> 0%
+    }
+    public static void calculateSpacePercentage(String text){
+        // (nr_spatii / nr_char) * 100
+        double numberOfSpaces = 0;
+        for(int i = 0; i < text.length(); i++){
+            if(text.charAt(i) == ' '){
+                numberOfSpaces++;
+            }
+        }
+        double result = (numberOfSpaces / text.length()) * 100;
+        System.out.println(result + "% of the string '" + text + "' is spaces!");
     }
 
-    public static void readTexts() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduceti un text!");
-        String line;
-        String longestString = "";
-        do {
-            line = scanner.nextLine();
-            if (line.length() > longestString.length() && !line.equals("Enough!")) {
-                longestString = line;
-            }
-        } while (!line.equals("Enough!"));
-        if (!longestString.equals("")) {
-            System.out.println("Cel mai lung String este " + longestString);
-        } else {
-            System.out.println("No text provided!");
-        }
-    }
+//    //task 11
+//    public static void main(String[] args){
+//        readTexts();
+//    }
+//
+//    public static void readTexts() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Introduceti un text!");
+//        String line;
+//        String longestString = "";
+//        do {
+//            line = scanner.nextLine();
+//            if (line.length() > longestString.length() && !line.equals("Enough!")) {
+//                longestString = line;
+//            }
+//        } while (!line.equals("Enough!"));
+//        if (!longestString.equals("")) {
+//            System.out.println("Cel mai lung String este " + longestString);
+//        } else {
+//            System.out.println("No text provided!");
+//        }
+//    }
 
 //    //task 10
 //    public static void main(String[] args){
