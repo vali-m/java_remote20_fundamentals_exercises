@@ -4,24 +4,58 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 13
+    //task 14
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        String line = scanner.nextLine();
-        stutter(line);
+        countCharactersBetween('a','b');//-->0
+        countCharactersBetween('a','z');//-->24
+        countCharactersBetween('a','e');//-->3
+
+        ////////optional
+        countCharactersBetween('z','a');//-->24
+        countCharactersBetween('a','a');//-->0
+        countCharactersBetween('A','%');//-->ERROR: Invalid
     }
 
-    //This is a test --> This This is is a a test test
-    public static void stutter(String text){
-        String[] words = text.split(" ");
-        for(String word : words){
-            System.out.print(word + " " + word + " ");
+    public static void countCharactersBetween(char first, char second){
+        int firstPosition = (int) first;
+        int secondPosition = (int) second;
+        if(!isLowercaseLetter(firstPosition) || !isLowercaseLetter(secondPosition)){
+            System.out.println("Error: Una din cele doua caractere nu este litera mica!");
+            return;
         }
-        //Solutia folosind for clasic
-//        for(int i = 0; i < words.length; i++){
-//            System.out.print(words[i] + " " + words[i] + " ");
-//        }
+        if(firstPosition == secondPosition){
+            System.out.println("0");
+            return;
+        }
+        if(firstPosition > secondPosition){
+            System.out.println(firstPosition - secondPosition - 1);
+        } else {
+            System.out.println(secondPosition - firstPosition - 1);
+        }
     }
+
+    public static boolean isLowercaseLetter(int ascii){
+        return ascii > 96 && ascii < 123;
+    }
+
+//    //task 13
+//    public static void main(String[] args){
+//        Scanner scanner = new Scanner(System.in);
+//        String line = scanner.nextLine();
+//        stutter(line);
+//    }
+//
+//    //This is a test --> This This is is a a test test
+//    public static void stutter(String text){
+//        String[] words = text.split(" ");
+//        for(String word : words){
+//            System.out.print(word + " " + word + " ");
+//        }
+//        //Solutia folosind for clasic
+////        for(int i = 0; i < words.length; i++){
+////            System.out.print(words[i] + " " + words[i] + " ");
+////        }
+//    }
 
 //
 //    //task 12
