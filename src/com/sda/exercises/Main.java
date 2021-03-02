@@ -4,22 +4,42 @@ import java.util.Scanner;
 
 public class Main {
 
-    //task 12
+    //task 13
     public static void main(String[] args){
-        calculateSpacePercentage("a a a ");//--> 50%
-        calculateSpacePercentage("aaa");//--> 0%
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        stutter(line);
     }
-    public static void calculateSpacePercentage(String text){
-        // (nr_spatii / nr_char) * 100
-        double numberOfSpaces = 0;
-        for(int i = 0; i < text.length(); i++){
-            if(text.charAt(i) == ' '){
-                numberOfSpaces++;
-            }
+
+    //This is a test --> This This is is a a test test
+    public static void stutter(String text){
+        String[] words = text.split(" ");
+        for(String word : words){
+            System.out.print(word + " " + word + " ");
         }
-        double result = (numberOfSpaces / text.length()) * 100;
-        System.out.println(result + "% of the string '" + text + "' is spaces!");
+        //Solutia folosind for clasic
+//        for(int i = 0; i < words.length; i++){
+//            System.out.print(words[i] + " " + words[i] + " ");
+//        }
     }
+
+//
+//    //task 12
+//    public static void main(String[] args){
+//        calculateSpacePercentage("a a a ");//--> 50%
+//        calculateSpacePercentage("aaa");//--> 0%
+//    }
+//    public static void calculateSpacePercentage(String text){
+//        // (nr_spatii / nr_char) * 100
+//        double numberOfSpaces = 0;
+//        for(int i = 0; i < text.length(); i++){
+//            if(text.charAt(i) == ' '){
+//                numberOfSpaces++;
+//            }
+//        }
+//        double result = (numberOfSpaces / text.length()) * 100;
+//        System.out.println(result + "% of the string '" + text + "' is spaces!");
+//    }
 
 //    //task 11
 //    public static void main(String[] args){
